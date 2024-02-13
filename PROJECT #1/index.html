@@ -1,0 +1,89 @@
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yes or No</title>
+    <style>
+        body {
+            font-family: Fantasy, sans-serif;
+            text-align: center;
+            background-image: url('b.png');
+            background-size: cover;
+            background-position: center;
+            overflow: hidden;
+        }
+        #text {
+            font-size: 3.6rem;
+            color: #f53699;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        .button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            margin: 0 10px;
+            border-radius: 12px;
+        }
+        #yesButton {
+            background-color:#ceff99;
+            color: black;
+            font-size: 16px;
+        }
+        #noButton {
+            background-color: #ffad99;
+            color: black;
+        } 
+        .center {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            width: 400px;
+            height: 400px;
+        }
+    </style>
+</head>
+<body>
+    <br>
+    <img src="cinnamoroll.gif" class="center">
+    <div id="text">Will you be my Valentine?</div>
+    <p> bawal mag no </p>
+    <button id="yesButton" class="button" onclick="redirectToPage()">Yes</button>
+    <button id="noButton" class="button" onclick="moveNoAndIncreaseYes()">No</button>
+    <br><br>
+    <script>
+        var fontSize = 16;
+
+        function moveNoAndIncreaseYes() {
+            moveNoButton(); 
+            increaseYesButtonSize(); 
+        }
+
+        function moveNoButton() {
+            var noButton = document.getElementById('noButton');
+            var screenWidth = window.innerWidth;
+            var screenHeight = window.innerHeight;
+            var randomX = Math.floor(Math.random() * (screenWidth - 200)); 
+            var randomY = Math.floor(Math.random() * (screenHeight - 50));
+
+            noButton.style.position = 'absolute';
+            noButton.style.left = randomX + 'px';
+            noButton.style.top = randomY + 'px';
+        }
+
+        function increaseYesButtonSize() {
+            var yesButton = document.getElementById('yesButton');
+
+            fontSize += 40; 
+            yesButton.style.fontSize = fontSize + 'px'; 
+        }
+
+        function redirectToPage() {
+            window.location.href = 'p1.html'; 
+        }
+    </script>
+</body>
+</html>
+
+
